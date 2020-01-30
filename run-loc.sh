@@ -1,1 +1,1 @@
-python manage.py runserver
+python auto-click.py
