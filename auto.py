@@ -1,11 +1,14 @@
+# button = mouse.scroll(0, 2)
+
 import time
 import threading
 from pynput.mouse import Button, Controller
 from pynput.keyboard import Listener, KeyCode
+import sys
 
-mouse = Controller()
-delay = 4
-button = mouse.scroll(0, 2)
+
+button = Button.left
+# button = mouse.scroll(0, 2)
 start_stop_key = KeyCode(char='s')
 exit_key = KeyCode(char='e')
 
@@ -31,11 +34,31 @@ class ClickMouse(threading.Thread):
     def run(self):
         while self.program_running:
             while self.running:
-                mouse.click(self.button)
+                if(mode == 'a'):
+                    mouse.click(self.button)
+                elif(mode == 'b'):
+                    mouse.scroll(0, -100)
                 time.sleep(self.delay)
 
 
+print('Start..')
+
+try:
+    print('Arg: '+sys.argv[1])
+    mode = sys.argv[1]
+except:
+    print("# Please input arg for select mode between")
+    print("#  `a` -> button left every 4sec")
+    print("#  `b` -> scroll down every 4sec")
+    sys.exit()
+
 mouse = Controller()
+
+if mode == 'a':
+    delay = 4
+elif mode == 'b':
+    delay = 3
+
 click_thread = ClickMouse(delay, button)
 click_thread.start()
 

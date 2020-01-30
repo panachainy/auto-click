@@ -1,1 +1,1 @@
-python auto-click.py
+python auto.py $1
