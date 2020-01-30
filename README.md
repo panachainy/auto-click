@@ -11,3 +11,11 @@ Python
 # Thank
 
 REF: https://www.youtube.com/watch?v=eamTeszpeZ4
+
+# Machine permission
+
+## Mac
+
+You must allow permission for control keyboard and mouse.
+
+Go to `System Preference` -> `Security & Privacy` -> `Input Monitoring` -> check permission your terminal.
