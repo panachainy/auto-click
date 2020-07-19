@@ -10,7 +10,7 @@ Python
 
 # Thank
 
-REF: https://www.youtube.com/watch?v=eamTeszpeZ4
+Ref: https://www.youtube.com/watch?v=eamTeszpeZ4
 
 # Machine permission
 
