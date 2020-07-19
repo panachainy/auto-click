@@ -8,8 +8,12 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - sudo pip install pipenv
-      - pipenv install
+
+      - run:
+        name: build
+        command: |
+          sudo pip install pipenv
+          pipenv install
 
       - run:
           name: publish exe
