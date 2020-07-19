@@ -12,6 +12,5 @@ jobs:
       - pipenv install
 
 workflows:
-  main:
     jobs:
-      - build-and-test
+        - build-and-test
