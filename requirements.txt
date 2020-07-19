@@ -3,3 +3,4 @@ pyobjc-core==6.1
 pyobjc-framework-Cocoa==6.1
 pyobjc-framework-Quartz==6.1
 six==1.14.0
+PyInstaller==3.6
