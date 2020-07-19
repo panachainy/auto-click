@@ -10,7 +10,3 @@ jobs:
       - checkout
       - sudo pip install pipenv
       - pipenv install
-
-workflows:
-    jobs:
-        - build-and-test
