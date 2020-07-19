@@ -10,10 +10,10 @@ jobs:
       - setup_remote_docker
 
       - run:
-        name: build
-        command: |
-          sudo pip install pipenv
-          pipenv install
+          name: build
+          command: |
+            sudo pip install pipenv
+            pipenv install
 
       - run:
           name: publish exe
