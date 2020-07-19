@@ -12,10 +12,20 @@ Python
 
 Ref: https://www.youtube.com/watch?v=eamTeszpeZ4
 
-# Machine permission
+# Arrange
 
 ## Mac
+
+### Machine permission
 
 You must allow permission for control keyboard and mouse.
 
 Go to `System Preference` -> `Security & Privacy` -> `Input Monitoring` -> check permission your terminal.
+
+## Windows10 - WSL
+
+```bash
+sudo apt update && upgrade
+
+sudo apt install python3 python3-pip ipython3
+```
