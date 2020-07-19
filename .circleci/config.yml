@@ -1,17 +1,25 @@
 version: 2.1
 
-docker:
-    - image: circleci/python:3.7.3
-
 jobs:
-  build-and-test:
+  test:
+    docker:
+      - image: circleci/python:3.7.3
+
     steps:
       - checkout
+      - setup_remote_docker
       - sudo pip install pipenv
       - pipenv install
+
+      - run:
+          name: publish exe
+          command: |
+            sudo pip install pipenv
+            pipenv install
+            pyinstaller -F auto-click.py
 
 workflows:
   version: 2.1
   build_test:
     jobs:
-      - build-and-test
+      - test
