@@ -1,21 +1,30 @@
 version: 2.1
 
-orbs:
-  python: circleci/python@0.2.1
-
 jobs:
-  build-and-test:
-    executor: python/default
+  test:
+    docker:
+      - image: circleci/python:3.7.3
+
     steps:
       - checkout
-      - python/load-cache
-      - python/install-deps
-      - python/save-cache
+      - setup_remote_docker
+
       - run:
-          command: ./manage.py test
-          name: Test
+          name: build
+          command: |
+            sudo pip install pipenv
+            pipenv install
+
+      - run:
+          name: publish exe
+          command: |
+            sudo pip install pipenv
+            pipenv install
+            pip install -r requirements.txt
+            pyinstaller -F auto-click.py
 
 workflows:
-  main:
+  version: 2.1
+  build_test:
     jobs:
-      - build-and-test
+      - test
