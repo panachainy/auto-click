@@ -1,4 +1,4 @@
-PyInstaller==3.6
+PyInstaller==5.13.1
 pynput==1.6.6
 pyobjc-core==6.1
 pyobjc-framework-Cocoa==6.1
